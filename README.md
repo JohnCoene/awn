@@ -108,7 +108,7 @@ shinyApp(ui, server)
 There are numerous [options](https://f3oall.github.io/awesome-notifications/docs/customization/) that are
 not hard-coded but nonetheless accessible.
 
-Note that you can also define global options to avoid
+You can also define global options to avoid
 having to repeat options at every notification, modal,
 etc.
 
