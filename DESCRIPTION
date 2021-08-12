@@ -1,13 +1,12 @@
 Package: awn
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Awesome Notifications for 'Shiny'
+Version: 0.0.1.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "John",
+           family = "Coene",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+           email = "jcoenep@gmail.com")
+Description: Awesome Notifications for 'Shiny'.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
