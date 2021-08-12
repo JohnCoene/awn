@@ -18,7 +18,7 @@ notify <- function(
     type = match.arg(type),
     content = as.character(content),
     ns = session$ns(NULL),
-    opts = list(...)
+    options = list(...)
   )
   session$sendCustomMessage("awn-notify", msg)
 }

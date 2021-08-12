@@ -102,3 +102,40 @@ server <- function(input, output, session) {
 
 shinyApp(ui, server)
 ```
+
+## Options
+
+There are numerous [options](https://f3oall.github.io/awesome-notifications/docs/customization/) that are
+not hard-coded but nonetheless accessible.
+
+Note that you can also define global options to avoid
+having to repeat options at every notification, modal,
+etc.
+
+```r
+library(awn)
+library(shiny)
+
+ui <- fluidPage(
+	useAwn(),
+	actionButton("show", "Show")
+)
+
+server <- function(input, output, session) {
+
+	awn_globals(durations = list(tip = 10000))
+
+	observeEvent(input$show, {
+		notify(
+			"Hello {awn}!",
+			type = "tip",
+			labels = list(
+				tip = "ADVICE"
+			)
+		)
+	})
+
+}
+
+shinyApp(ui, server)
+```
