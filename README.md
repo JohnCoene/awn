@@ -25,7 +25,8 @@ awn::gallery()
 
 ### Notify
 
-Show a notification.
+Show a notification. 
+Place `useAwn` in the UI.
 
 ```r
 library(awn)
@@ -58,6 +59,7 @@ shinyApp(ui, server)
 ### Modal
 
 Display a modal.
+Place `useAwn` in the UI.
 
 ```r
 library(awn)
@@ -84,6 +86,7 @@ shinyApp(ui, server)
 ### Ask
 
 Prompt the user.
+Place `useAwn` in the UI.
 
 ```r
 library(awn)
