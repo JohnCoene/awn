@@ -14,6 +14,15 @@ Install from Github.
 remotes::install_github("JohnCoene/awn")
 ```
 
+## Demo
+
+Run the `gallery` to view a demo app and the functionalities of
+the package.
+
+```r
+awn::gallery()
+```
+
 ### Notify
 
 Show a notification.

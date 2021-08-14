@@ -10,7 +10,7 @@ ask(id, content, ..., session = shiny::getDefaultReactiveDomain())
 \item{id}{Id of the input this defines.
 The input that is defined returns \code{TRUE}
 if the user accepts, and \code{FALSE} if
-the user rejects.}
+the user rejects. See details.}
 
 \item{content}{Content of the prompt,
 question to prompt.}
@@ -21,4 +21,9 @@ question to prompt.}
 }
 \description{
 Create a prompt: 'confirm' or 'cancel'.
+}
+\details{
+The \code{id} is used to define the input
+so \code{ask(id = "xxx")} will return the response
+of at \code{input$xxx}.
 }

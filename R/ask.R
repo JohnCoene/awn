@@ -5,11 +5,15 @@
 #' @param id Id of the input this defines.
 #' The input that is defined returns `TRUE`
 #' if the user accepts, and `FALSE` if 
-#' the user rejects.
+#' the user rejects. See details.
 #' @param content Content of the prompt,
 #' question to prompt.
 #' @param ... Options.
 #' @param session A valid shiny session.
+#' 
+#' @details The `id` is used to define the input
+#' so `ask(id = "xxx")` will return the response
+#' of at `input$xxx`.
 #' 
 #' @export
 ask <- function(

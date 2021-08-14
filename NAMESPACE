@@ -2,6 +2,7 @@
 
 export(ask)
 export(awn_globals)
+export(gallery)
 export(modal)
 export(notify)
 export(useAwn)
@@ -9,3 +10,4 @@ importFrom(htmltools,htmlDependencies)
 importFrom(htmltools,htmlDependency)
 importFrom(htmltools,tagList)
 importFrom(shiny,icon)
+importFrom(shiny,shinyAppFile)
