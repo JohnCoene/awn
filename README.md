@@ -58,8 +58,7 @@ shinyApp(ui, server)
 
 ### Modal
 
-Display a modal.
-Place `useAwn` in the UI.
+Display a modal. Place `useAwn` in the UI.
 
 ```r
 library(awn)
