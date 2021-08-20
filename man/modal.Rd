@@ -4,12 +4,20 @@
 \alias{modal}
 \title{Modal}
 \usage{
-modal(content, ..., session = shiny::getDefaultReactiveDomain())
+modal(
+  content,
+  ...,
+  .onShown = NULL,
+  session = shiny::getDefaultReactiveDomain()
+)
 }
 \arguments{
 \item{content}{Content to display.}
 
 \item{...}{Options to pass to the notification.}
+
+\item{.onShown}{JavaScript callback to run after the
+modal is displayed.}
 
 \item{session}{A valid shiny \code{session}.}
 }

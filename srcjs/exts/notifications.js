@@ -11,6 +11,9 @@ Shiny.addCustomMessageHandler('awn-notify', (msg) => {
 Shiny.addCustomMessageHandler('awn-modal', (msg) => {
   init();
   notifier.modal(msg.content, 'modal-awn', msg.options);
+
+  if(msg.onShown)
+    eval(msg.onShown);
 });
 
 Shiny.addCustomMessageHandler('awn-ask', (msg) => {
