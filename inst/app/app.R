@@ -1,4 +1,5 @@
 library(shiny)
+library(awn)
 
 ui <- fluidPage(
 	useAwn(),
