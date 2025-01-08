@@ -3,6 +3,10 @@ import { makeCallback } from './callbacks';
 import AWN from 'awesome-notifications';
 import 'awesome-notifications/dist/style.css';
 
+export const create = (opts) => {
+  return new AWN(opts || {})
+}
+
 let notifier;
 Shiny.addCustomMessageHandler('awn-notify', (msg) => {
   dispatch(msg);
@@ -12,7 +16,7 @@ Shiny.addCustomMessageHandler('awn-modal', (msg) => {
   init();
   notifier.modal(msg.content, 'modal-awn', msg.options);
 
-  if(msg.onShown)
+  if (msg.onShown)
     eval(msg.onShown);
 });
 
@@ -27,12 +31,12 @@ Shiny.addCustomMessageHandler('awn-ask', (msg) => {
 });
 
 Shiny.addCustomMessageHandler('awn-globals', (msg) => {
-  notifier = new AWN(globalOptions);
+  notifier = new AWN(msg.options);
 });
 
 const dispatch = (msg) => {
   init();
-  switch(msg.type) {
+  switch (msg.type) {
     case 'warning':
       notifier.warning(msg.content, msg.options);
       break;
@@ -55,8 +59,8 @@ const dispatch = (msg) => {
 }
 
 const init = () => {
-  if(notifier != undefined)
+  if (notifier != undefined)
     return;
-  
+
   notifier = new AWN();
 }

@@ -3,39 +3,39 @@ const fs = require('fs');
 
 // defaults
 var outputPath = [],
-    entryPoints = [],
-    externals = [],
-    misc = [],
-    loaders = [];
+  entryPoints = [],
+  externals = [],
+  misc = [],
+  loaders = [];
 
 var outputPathFile = './srcjs/config/output_path.json',
-    entryPointsFile = './srcjs/config/entry_points.json',
-    externalsFile = './srcjs/config/externals.json',
-    miscFile = './srcjs/config/misc.json',
-    loadersFile = './srcjs/config/loaders.json';
+  entryPointsFile = './srcjs/config/entry_points.json',
+  externalsFile = './srcjs/config/externals.json',
+  miscFile = './srcjs/config/misc.json',
+  loadersFile = './srcjs/config/loaders.json';
 
 // Read config files
-if(fs.existsSync(outputPathFile)){
+if (fs.existsSync(outputPathFile)) {
   outputPath = fs.readFileSync(outputPathFile, 'utf8');
 }
 
-if(fs.existsSync(entryPointsFile)){
+if (fs.existsSync(entryPointsFile)) {
   entryPoints = fs.readFileSync(entryPointsFile, 'utf8');
 }
 
-if(fs.existsSync(externalsFile)){
+if (fs.existsSync(externalsFile)) {
   externals = fs.readFileSync(externalsFile, 'utf8');
 }
 
-if(fs.existsSync(miscFile)){
+if (fs.existsSync(miscFile)) {
   misc = fs.readFileSync(miscFile, 'utf8');
 }
 
-if(fs.existsSync(loadersFile)){
+if (fs.existsSync(loadersFile)) {
   loaders = fs.readFileSync(loadersFile, 'utf8');
 }
 
-if(fs.existsSync(loadersFile)){
+if (fs.existsSync(loadersFile)) {
   loaders = fs.readFileSync(loadersFile, 'utf8');
 }
 
@@ -48,7 +48,7 @@ entryPoints = JSON.parse(entryPoints);
 // parse regex
 loaders.forEach((loader) => {
   loader.test = RegExp(loader.test);
-  return(loader);
+  return (loader);
 })
 
 // placeholder for plugins
@@ -60,6 +60,7 @@ var options = {
   entry: entryPoints,
   output: {
     filename: '[name].js',
+    library: { name: '[name]', type: 'umd' },
     path: path.resolve(__dirname, JSON.parse(outputPath)),
   },
   externals: externals,
@@ -73,7 +74,7 @@ var options = {
 };
 
 // add misc
-if(misc.resolve)
+if (misc.resolve)
   options.resolve = misc.resolve;
 
 // export
