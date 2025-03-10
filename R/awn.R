@@ -1,12 +1,12 @@
 #' Dependencies
-#' 
+#'
 #' Include dependencies, place anywhere in the shiny UI.
-#' 
+#'
 #' @importFrom shiny icon
 #' @importFrom htmltools htmlDependency htmlDependencies tagList
-#' 
+#'
 #' @export
-useAwn <- function(){
+useAwn <- function() {
   dep <- htmlDependency(
     "awn",
     version = utils::packageVersion("awn"),
@@ -22,17 +22,17 @@ useAwn <- function(){
 }
 
 #' Global Options
-#' 
+#'
 #' Define global options.
-#' 
+#'
 #' @param ... Options.
 #' @param session A valid shiny session.
-#' 
+#'
 #' @export
 awn_globals <- function(
   ...,
   session = shiny::getDefaultReactiveDomain()
-){
+) {
   msg <- list(
     options = list(...),
     ns = session$ns(NULL)
